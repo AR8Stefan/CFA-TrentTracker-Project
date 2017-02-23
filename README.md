@@ -25,4 +25,4 @@ The app runs in the terminal. Run:
 
 ##How to use
 
-Make some selections, 
+The first to display is the splash screen informing to the user what the app is for. Press any key to go onto the selection screen. There are 3 items to choose from 1) find out Trent's location, 2) send a mix tape to Trent based on his geographical location, 3) send a love letter to trent via the inbuilt email interface.
