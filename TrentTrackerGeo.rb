@@ -19,6 +19,7 @@ Tests: 2 per Class
 
 require 'google_maps_service'
 require_relative 'config'
+require_relative 'song'
 
 class GoogleMaps
 
@@ -40,6 +41,10 @@ def location(gmaps, origins, destinations, method)
     avoid: 'tolls',
     units: 'metric')
 
+    country = destinations.map{|i| "" + i.to_s + ""}.join(",")
+
+    country1 = country.split(",").last
+
     system 'clear'
 
     puts "You're " +
@@ -47,7 +52,9 @@ def location(gmaps, origins, destinations, method)
     "away from admiring Trent."
     puts "It'll take you" + " " +
     matrix[:rows][0][:elements][0][:duration][:text] + " " +
-    "to get close to admire Trent."
+    "to get closer to admire Trent."
+
+    return country1
 
 end
 
@@ -93,7 +100,7 @@ while continue == 'n'
    system 'clear'
 
    if continue == 'n'
-     puts '*sigh*, lets try again'
+     puts '*le sigh*, lets try again'
      gets.chomp
      system 'clear'
    end
@@ -109,9 +116,9 @@ def where_trent
 
   addresses = [
            '7 Kelly Street, Ultimo, NSW, Australia',
-           '120 Spencer Street, Melbourne, VIC',
-           '77 Castle Street Castle Hill, NSW 2154 Australia',
-           '7114 Kundiman Street, Sampaloc 1008 Manila Philippines'
+           '120 Spencer Street, Melbourne, VIC, Australia',
+           '77 Castle Street, Castle Hill, NSW, 2154, Australia',
+           '7114 Kundiman Street Sampaloc 1008 Manila Philippines'
          ]
   address = addresses.sample(1)
 
@@ -127,7 +134,7 @@ def mode
 
   while mode == 'a'
     print "Opps, forgot something. How do you want to get to Trent? " +
-        "(W)alk? or (D)rive? "
+        "(W)alk? (D)rive? or (P)ublic Transit? "
 
     mode = gets.chomp.downcase
 
@@ -137,6 +144,8 @@ def mode
       return 'walking'
     elsif mode == 'd'
       return 'driving'
+    elsif mode == 'p'
+      return 'transit'
     else
       puts "Wrong input, please enter again. Soooo close!"
       system 'clear'
@@ -144,13 +153,14 @@ def mode
   end
 
 end
+def geostart
+ origin = enter_origin
 
-origin = enter_origin
+ destination = where_trent
 
-destination = where_trent
+ method = mode
 
-method = mode
+ maps = GoogleMaps.new
 
-maps = GoogleMaps.new
-
-puts location(maps, origin, destination, method)
+ puts location(maps, origin, destination, method)
+end
