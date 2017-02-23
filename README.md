@@ -33,7 +33,8 @@ A splash screen presents the user (a Trent admirer) with the aptly titled - Tren
 ###Ruby Gems Required
 
 * edwardsamual / google-maps-services-ruby
-* 
+* a spotify ruby gem
+* a STMP ruby gem
 
 ###Known bugs
 
