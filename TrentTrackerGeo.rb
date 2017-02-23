@@ -145,6 +145,7 @@ def mode
 
 end
 
+def geostart
 origin = enter_origin
 
 destination = where_trent
@@ -154,3 +155,4 @@ method = mode
 maps = GoogleMaps.new
 
 puts location(maps, origin, destination, method)
+end

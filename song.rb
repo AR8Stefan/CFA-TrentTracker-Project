@@ -55,6 +55,7 @@ class Song
   end
 end
 
+def songstart
 def get_country
   country_hash = {'australia'       => 'AU',
                   'phillipines'     => 'PH',
@@ -108,11 +109,12 @@ def get_genre
   return @genre_hash_to_description
 end
 
-country_name = get_genre.genre
-get_country
-get_genre
+  get_country
+  get_genre
 
-system 'clear'
-puts "#{@genre} mixtape based on popular songs in #{@country_code} "
-song = Song.new
-song.recommend(@country_code, @genre)
+  system 'clear'
+  puts "#{@genre} mixtape based on popular songs in #{@country_code} "
+  song = Song.new
+  song.recommend(@country_code, @genre)
+
+end

@@ -1,6 +1,7 @@
 require 'terminal-table'
-# require 'rspotify'
-# require 'geocoder'
+# require_relative 'trenttrackerlove'
+require_relative 'TrentTrackerGeo'
+# require_relative 'song'
 
 rows = []
 rows << ['Where is Trent?', 1]
@@ -8,13 +9,13 @@ rows << ['Make a Mix Tape', 2]
 rows << ['Love Letter', 3]
 @table1 = Terminal::Table.new :title => " \u2665 Trent Tracker \u2665 ", :headings => ['Options', 'Number'], :rows => rows, :style => {:width => 30, :border_x => "=", :border_i => "\u2665"}
 
-rows = []
-rows << ['Where is Trent?', 1]
-rows << ['Make a Mix Tape', 2]
-rows << ['Love Letter', 3]
-rows << ['Type to "4" exit', 4]
-@table2 = Terminal::Table.new :rows => rows, :style => {:width => 30, :border_x => "=", :border_i => "\u2665"}
-	
+# rows = []
+# rows << ['Where is Trent?', 1]
+# rows << ['Make a Mix Tape', 2]
+# rows << ['Love Letter', 3]
+# rows << ['Type to "4" exit', 4]
+# @table2 = Terminal::Table.new :rows => rows, :style => {:width => 30, :border_x => "=", :border_i => "\u2665"}
+
 def trent_track
 	# Insert Splash-Screen
 	system "cls" || system(clear)
@@ -32,7 +33,8 @@ def trent_track
 	puts "Press Any Key to continue"
 	enter = gets.chomp
 
-	system "cls" || system(clear)
+	system "cls"
+	system('clear')
 
 	puts @table1
 
@@ -41,16 +43,18 @@ def trent_track
 	input = gets.chomp.to_i
 
 		system "cls" || system(clear)
-		
+
 		if input == 1
-				puts @table2
-				puts "Behind YOU!"
+			  geostart
+				puts @table1
 			elsif input == 2
-				puts @table2
-				puts "Love Songs!"
+				require_relative 'song'
+				songstart
+				puts @table1
 			elsif input == 3
-				puts @table2
-				puts "Write a love letter"
+				require_relative 'trenttrackerlove'
+				message_start
+				puts @table1
 			elsif input == 4
 				break
 			else
