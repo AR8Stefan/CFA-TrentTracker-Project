@@ -41,5 +41,3 @@ start.sendlove(msg, @email)
 system('clear')
 puts "Love message sent!"
 end
-
-message_start
