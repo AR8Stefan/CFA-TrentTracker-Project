@@ -43,6 +43,9 @@ The app runs in the terminal. Run:
 
 ##How to use
 
+
+The first to display is the splash screen informing to the user what the app is for. Press any key to go onto the selection screen. There are 3 items to choose from 1) find out Trent's location, 2) send a mix tape to Trent based on his geographical location, 3) send a love letter to trent via the inbuilt email interface.
+
 A splash screen presents the user (a Trent admirer) with the aptly titled - Trent Tracker - app. Once pass the splash screen the user is presented with a menu of 3 options:
 * 1) Choose to know how far a user is from Trent and how long it'd take to get to him.
 * 2) Choose to make a mixed tape based on Trent's location and the user's location.
