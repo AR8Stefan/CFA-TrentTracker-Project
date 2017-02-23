@@ -25,4 +25,18 @@ The app runs in the terminal. Run:
 
 ##How to use
 
-Make some selections, 
+A splash screen presents the user (a Trent admirer) with the aptly titled - Trent Tracker - app. Once pass the splash screen the user is presented with a menu of 3 options:
+* 1) Choose to know how far a user is from Trent and how long it'd take to get to him.
+* 2) Choose to make a mixed tape based on Trent's location and the user's location.
+* 3) Send an email of admiration to Trent.
+
+###Ruby Gems Required
+
+* edwardsamual / google-maps-services-ruby
+* 
+
+###Known bugs
+
+After we got the initial gems to work we did testing on a sample of addresses. We started having trouble with the google maps api. It returned nil location on requests that required overseas travel. The flight mode of travel isn't available for this gem or it isn't supplied by google. This issue crashed the program. We haven't found a solution to this and will look into the documentation for further information.
+
+After more testing we discovered a conflict between the spotify gem and the STMP gem. They wouldn't work if both of the gems were required in the header, however, it functioned when one or both were in an if statement in the body of the program. There isn't much documentation on how to solve this problem. It is an issue that requires further investigation.
