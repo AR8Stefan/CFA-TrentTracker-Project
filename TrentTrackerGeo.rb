@@ -156,11 +156,22 @@ end
 def geostart
  origin = enter_origin
 
+<<<<<<< HEAD
  destination = where_trent
+=======
+def geostart
+origin = enter_origin
+>>>>>>> 97dd0248fbe8740b12ab8b42907f64c4a63a6803
 
  method = mode
 
  maps = GoogleMaps.new
 
+<<<<<<< HEAD
  puts location(maps, origin, destination, method)
+=======
+maps = GoogleMaps.new
+
+puts location(maps, origin, destination, method)
+>>>>>>> 97dd0248fbe8740b12ab8b42907f64c4a63a6803
 end
