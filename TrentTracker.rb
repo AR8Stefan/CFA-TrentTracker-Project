@@ -40,7 +40,7 @@ print "Select a number to interact with Trent\n"
 input = gets.chomp.to_i
 
 	system "cls" || system(clear)
-	
+
 	if input == 1
 			puts table2
 			puts "Behind YOU!"
@@ -57,3 +57,5 @@ input = gets.chomp.to_i
 	end
 
 end
+
+#testing merge
