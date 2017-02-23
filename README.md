@@ -2,7 +2,7 @@
 
 ##About The Project
 
-Trent has become a celebrity in the Philippines. All celebrities of note have legions of adoring groupies.
+This project is inspired by Trent's newly acquired celebrity status in the Philippines. All celebrities of note have legions of adoring groupies.
 
 Our project aims to solve the question -- as a fan, where is Trent today?, and how can I show my devotion to him?
 
@@ -19,11 +19,31 @@ We used the following user stories to design our application:
 
 ##Installation & How To Run
 
+Install the dependencies:
+
+Install google-maps-services:
+
+`gem install google_maps_service`
+
+Install rspotify:
+
+`gem install rspotify`
+
+Install mail
+
+`gem install mail`
+
+Install terminal-table
+
+`gem install terminal-table`
+
 The app runs in the terminal. Run:
 
 `ruby TrentTracker.rb`
 
 ##How to use
+
+The first to display is the splash screen informing to the user what the app is for. Press any key to go onto the selection screen. There are 3 items to choose from 1) find out Trent's location, 2) send a mix tape to Trent based on his geographical location, 3) send a love letter to trent via the inbuilt email interface.
 
 A splash screen presents the user (a Trent admirer) with the aptly titled - Trent Tracker - app. Once pass the splash screen the user is presented with a menu of 3 options:
 * 1) Choose to know how far a user is from Trent and how long it'd take to get to him.
