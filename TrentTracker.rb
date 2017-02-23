@@ -7,7 +7,8 @@ rows = []
 rows << ['Where is Trent?', 1]
 rows << ['Make a Mix Tape', 2]
 rows << ['Love Letter', 3]
-@table1 = Terminal::Table.new :title => " \u2665 Trent Tracker \u2665 ", :headings => ['Options', 'Number'], :rows => rows, :style => {:width => 30, :border_x => "=", :border_i => "\u2665"}
+@table1 = Terminal::Table.new :title => " \u2665 Trent Tracker \u2665 ", :headings => ['Options', 'Number'],
+:rows => rows, :style => {:width => 39,  :border_i => "\u2665"}
 
 # rows = []
 # rows << ['Where is Trent?', 1]
@@ -26,7 +27,7 @@ def trent_track
 	...##....#####...####....##.###....##..............##....#####...######..##......####....####....#####..
 	...##....##..##..##......##..##....##..............##....##..##..##..##..##..##..##.##...##......##..##.
 	...##....##..##..######..##..##....##..............##....##..##..##..##...####...##..##..######..##..##.
-	...........................An Admiration Tool for the Modern Day Trent Lovers...........................
+	...........................An Admiration Tool for the Modern Day Trent Lover............................
 
 	     "
 
@@ -39,7 +40,7 @@ def trent_track
 	puts @table1
 
 	loop do
-	print "Select a number to interact with Trent\n"
+	print "Select a number to admire Trent\n"
 	input = gets.chomp.to_i
 
 		system "cls" || system(clear)
@@ -52,13 +53,14 @@ def trent_track
 				songstart
 				puts @table1
 			elsif input == 3
-				require_relative 'trenttrackerlove'
+				#require_relative 'trenttrackerlove'
 				message_start
 				puts @table1
 			elsif input == 4
 				break
 			else
-				puts @table2
+				system 'clear'
+				puts @table1
 				puts "Please Enter a Valid Number."
 		end
 	end
